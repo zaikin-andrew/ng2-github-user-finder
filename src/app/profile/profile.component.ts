@@ -9,10 +9,12 @@ import 'rxjs/add/operator/map';
   styleUrls: ['profile.component.css']
 })
 export class ProfileComponent {
-  user;
-  repos;
-
-  constructor(private githubAPI: GithubService) {
+  user = false;
+  repos = false;
+  username;
+  constructor(private githubAPI: GithubService) {}
+  search() {
+    this.githubAPI.updateUsername(this.username);
     this.githubAPI.getUser().subscribe(user => this.user = user);
     this.githubAPI.getRepos().subscribe(repos => this.repos = repos);
   }
