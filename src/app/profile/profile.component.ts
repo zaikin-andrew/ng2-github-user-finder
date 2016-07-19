@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { GithubService } from '../shared/github.service';
 import 'rxjs/add/operator/map';
 
@@ -8,12 +8,11 @@ import 'rxjs/add/operator/map';
   templateUrl: 'profile.component.html',
   styleUrls: ['profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
+  user;
 
-  constructor(private githubAPI: GithubService) {}
-
-  ngOnInit() {
-    this.githubAPI.getUser().subscribe(user => console.log(user));
+  constructor(private githubAPI: GithubService) {
+    this.githubAPI.getUser().subscribe(user => this.user = user);
   }
 
 }
