@@ -10,9 +10,11 @@ import 'rxjs/add/operator/map';
 })
 export class ProfileComponent {
   user;
+  repos;
 
   constructor(private githubAPI: GithubService) {
     this.githubAPI.getUser().subscribe(user => this.user = user);
+    this.githubAPI.getRepos().subscribe(repos => this.repos = repos);
   }
 
 }

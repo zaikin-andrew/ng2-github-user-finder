@@ -8,6 +8,11 @@ export class GithubService {
   constructor(private http: Http) {}
 
   getUser() {
-    return this.http.get(`https://api.github.com/users/${this.username}`).map(res => res.json());
+    return this.http.get(`https://api.github.com/users/${this.username}`)
+      .map(res => res.json());
+  }
+  getRepos() {
+    return this.http.get(`https://api.github.com/users/${this.username}/repos`)
+      .map(res => res.json());
   }
 }
