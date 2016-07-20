@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { GithubService } from '../shared/github.service';
 import 'rxjs/add/operator/map';
 
+
 @Component({
   moduleId: module.id,
   selector: 'user-profile',
