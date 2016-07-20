@@ -10,7 +10,7 @@
     "format": "clang-format -i -style=file --glob=src/**/*.ts",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "serve-dist": "gulp"
+    "serve-dist": "cd dist && live-server --port=3030 --entry-file=index.html"
   },
   "private": true,
   "dependencies": {
